@@ -1,0 +1,48 @@
+
+<iframe name='formsupviral' class="uvembed145841" frameborder="0"
+ src="https://static.upviral.com/loader.html" allowfullscreen="allowfullscreen" 
+ style="margin: 0 auto;display: block;"></iframe>
+<script>
+window.UpviralConfig = {camp:"G8484M",
+widget_style:'iframe',width:"100%",snippet_id:"64469c7845206"}
+</script>
+<script language="javascript" src="https://snippet.upviral.com/upviral.js"></script>
+
+
+<script>
+  window.onload = function() {
+    function getUTMParams(url) {
+  var utmParams = {};
+  var queryString = url.split('?')[1];
+  if (queryString) {
+    var params = queryString.split('&');
+    for (var i = 0; i < params.length; i++) {
+      var param = params[i].split('=');
+      if (param[0].startsWith('utm_')) {
+        utmParams[param[0]] = param[1];
+      }
+    }
+  }
+  return utmParams;
+}
+
+// identificar o iframe e o formulário dentro dele pelo atributo "name"
+var iframe = document.getElementsByName("formsupviral")[0];
+var form = iframe.contentWindow.document.getElementsByName('upviralForm145841')[0];
+
+// extrair parâmetros UTM da URL
+var utmParams = getUTMParams(window.location.href);
+
+// preencher campos do formulário com os parâmetros UTM extraídos
+if (form) {
+  form.elements['UtmSource'].value = utmParams['utm_source'] || '';
+  form.elements['UtmMedium'].value = utmParams['utm_medium'] || '';
+  form.elements['UtmCampaign'].value = utmParams['utm_campaign'] || '';
+  form.elements['UtmContent'].value = utmParams['utm_content'] || '';
+  form.elements['UtmTerm'].value = utmParams['utm_term'] || '';
+}
+
+
+  };
+  </script>
+<script>
